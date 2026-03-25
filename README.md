@@ -29,23 +29,27 @@ Le modèle apprend à faire le lien entre les données et si le ticket est urgen
 On utilise le modèle sur les données de test pour prédire si un ticket est urgent ou non.
 
 ## 7. Évaluation (métriques)
-On obtient :
+Généralement, on obtient des résultats parfaits :
 - accuracy : 1.0
 - recall : 1.0
 
-Donc le modèle fait aucune erreur sur les données test.
+Mais selon les splits train/test, on peut obtenir :
+- accuracy : 0.75
+- recall : 0.75
+
+Cela montre la variabilité due à la petite taille du dataset.
 
 ## 8. Conclusion sur le modèle
-Le modèle a l’air parfait, mais en réalité il faut faire attention.
-- Le dataset est petit et assez simple, donc le modèle apprend trop facilement.
-- Les résultats peuvent être trompeurs et ne pas marcher sur de nouvelles données.
+Le modèle peut donner des résultats parfaits (100%) ou bons (75%) selon le split.
+- Le dataset est petit, donc les performances varient beaucoup selon la séparation train/test.
+- Les scores parfaits sont possibles mais pas garantis sur de nouvelles données.
 - Le recall reste important parce qu’on ne veut pas rater les tickets urgents.
 
 ## Restitution
 - **Qu’a-t-on voulu prédire ?**
   On voulait prédire si un ticket est urgent ou pas.
 - **Le modèle semble-t-il utile ?**
-  Le modèle semble très bon avec des résultats parfaits, mais ce n’est pas forcément fiable à cause du dataset trop petit.
+  Le modèle semble utile avec des résultats parfaits ou corrects selon les cas, mais la variabilité due au petit dataset limite sa fiabilité.
 - **Quelle métrique vous paraît la plus importante ici ?**
   Le recall, parce que le but c’est de ne pas rater les tickets urgents.
 - **Quelle limite principale avez-vous identifiée ?**
